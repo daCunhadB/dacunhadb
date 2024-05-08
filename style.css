@@ -2,50 +2,46 @@
  Reset de body
  */
 * {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /*
  Aparência
  */
 :root {
-	--purple: rgba(42, 15, 60, 1);
-	--gold: rgb(158, 3, 114);
-	--bg-degrees: 45deg;
-	--switch-bg-url: url(./assets/Light.png);
+  --purple: rgb(29, 11, 29);
+  --gold: rgb(29, 2, 24);
+  --bg-degrees: 45deg;
+  --switch-bg-url: url(./assets/Light.png);
 
-	--text-color: white;
-	--body-font: 'Inter', sans-serif;
-	--body-bg: no-repeat
-		linear-gradient(
-			var(--bg-degrees),
-			var(--purple) 0%,
-			var(--gold) 100%
-		)
-		center/cover;
+  --text-color: white;
+  --body-font: "Inter", sans-serif;
+  --body-bg: no-repeat
+    linear-gradient(var(--bg-degrees), var(--purple) 0%, var(--gold) 100%)
+    center/cover;
 
-	--stroke-color: rgba(255, 255, 255, 0.5);
-	--surface-color: rgba(255, 255, 255, 0.1);
-	--surface-color-hover: rgba(255, 255, 255, 0.05);
-	--highlight-color: rgba(255, 255, 255, 0.2);
+  --stroke-color: rgba(255, 255, 255, 0.5);
+  --surface-color: rgba(255, 255, 255, 0.1);
+  --surface-color-hover: rgba(255, 255, 255, 0.05);
+  --highlight-color: rgba(255, 255, 255, 0.2);
 }
 
 .light {
-	--purple: rgba(228, 214, 237, 1);
-	--pink: rgb(219, 186, 205);
-	--bg-degrees: 315deg;
-	--switch-bg-url: url(./assets/Light.png);
+  --purple: rgb(198, 161, 221);
+  --pink: rgb(249, 8, 149);
+  --bg-degrees: 315deg;
+  --switch-bg-url: url(./assets/Light.png);
 
-	--text-color: black;
+  --text-color: black;
 
-	--stroke-color: rgba(0, 0, 0, 0.5);
-	--surface-color: rgba(0, 0, 0, 0.05);
-	--surface-color-hover: rgba(0, 0, 0, 0.02);
-	--highlight-color: rgba(0, 0, 0, 0.1);
+  --stroke-color: rgba(0, 0, 0, 0.5);
+  --surface-color: rgba(0, 0, 0, 0.05);
+  --surface-color-hover: rgba(0, 0, 0, 0.02);
+  --highlight-color: rgba(0, 0, 0, 0.1);
 }
 
 /*
@@ -53,169 +49,169 @@
  */
 html,
 body {
-	min-height: 100vh;
-	background: var(--body-bg);
+  min-height: 100vh;
+  background: var(--body-bg);
 }
 
 body * {
-	color: var(--text-color);
-	font-family: var(--body-font);
+  color: var(--text-color);
+  font-family: var(--body-font);
 }
 
 ul {
-	list-style: none;
+  list-style: none;
 }
 
 /*
  Perfil
  */
 .container {
-	width: 100%;
-	max-width: 37rem;
-	margin: 0 auto;
-	padding-top: 3.5rem;
+  width: 100%;
+  max-width: 37rem;
+  margin: 0 auto;
+  padding-top: 3.5rem;
 
-	text-align: center;
+  text-align: center;
 }
 
 #profile {
-	margin-bottom: 1.5rem;
+  margin-bottom: 1.5rem;
 }
 
 .avatar {
-	width: 7rem;
-	height: 7rem;
-	margin: 0 auto 0.5rem;
-	overflow: hidden;
-	border-radius: 50%;
-	border: 2px solid var(--stroke-color);
+  width: 7rem;
+  height: 7rem;
+  margin: 0 auto 0.5rem;
+  overflow: hidden;
+  border-radius: 50%;
+  border: 2px solid var(--stroke-color);
 }
 
 .avatar img {
-	width: 100%;
-	object-fit: cover;
+  width: 100%;
+  object-fit: cover;
 }
 
 /*
 Temas
 */
 #switch {
-	width: 4rem;
-	position: relative;
-	margin: 0 auto;
+  width: 4rem;
+  position: relative;
+  margin: 0 auto;
 }
 
 #switch::after {
-	content: '';
-	display: block;
-	width: 100%;
-	height: 1.5rem;
-	background: var(--surface-color);
-	border: 1px solid var(--stroke-color);
-	backdrop-filter: blur(0.25rem);
-	-webkit-backdrop-filter: blur(0.25rem);
-	border-radius: 9999px;
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1.5rem;
+  background: var(--surface-color);
+  border: 1px solid var(--stroke-color);
+  backdrop-filter: blur(0.25rem);
+  -webkit-backdrop-filter: blur(0.25rem);
+  border-radius: 9999px;
 }
 
 #switch button {
-	width: 2rem;
-	height: 2rem;
-	border: 0;
-	border-radius: 60%;
-	cursor: pointer;
-	background: white var(--switch-bg-url) no-repeat center;
+  width: 2rem;
+  height: 2rem;
+  border: 0;
+  border-radius: 60%;
+  cursor: pointer;
+  background: white var(--switch-bg-url) no-repeat center;
 
-	position: absolute;
-	top: 50%;
-	left: 0;
-	z-index: 1;
-	transform: translateY(-50%);
-	transition: outline 0.5s;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  z-index: 1;
+  transform: translateY(-50%);
+  transition: outline 0.5s;
 
-	animation: slide-back 0.5s;
+  animation: slide-back 0.5s;
 }
 
 #switch button:hover {
-	outline: 8px solid var(--highlight-color);
+  outline: 8px solid var(--highlight-color);
 }
 
 .light #switch button {
-	animation: slide-in 0.5s forwards;
+  animation: slide-in 0.5s forwards;
 }
 
 /*
 Links
 */
 #links {
-	padding: 1.5rem;
-	display: flex;
-	flex-direction: column;
-	gap: 1rem;
-	padding: 1.5rem;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1.5rem;
 }
 
 #links a {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	padding: 1rem 1.5rem;
-	background: var(--surface-color);
-	border: 1px solid var(--stroke-color);
-	border-radius: 0.5rem;
-	backdrop-filter: blur(0.25rem);
-	-webkit-backdrop-filter: blur(0.25rem);
-	text-decoration: none;
-	font-weight: 500;
-	transition: background 1s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 1.5rem;
+  background: var(--surface-color);
+  border: 1px solid var(--stroke-color);
+  border-radius: 0.5rem;
+  backdrop-filter: blur(0.25rem);
+  -webkit-backdrop-filter: blur(0.25rem);
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 1s;
 }
 
 #links a:hover {
-	background: var(--surface-color-hover);
-	border: 1.5px solid var(--text-color);
+  background: var(--surface-color-hover);
+  border: 1.5px solid var(--text-color);
 }
 
 /*
  * Redes Sociais
  */
 #social {
-	display: flex;
-	justify-content: center;
-	padding: 1.5rem 0;
-	font-size: 1.5rem;
+  display: flex;
+  justify-content: center;
+  padding: 1.5rem 0;
+  font-size: 1.5rem;
 }
 
 #social a {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
 
-	transition: background 0.2s;
-	border-radius: 50%;
+  transition: background 0.2s;
+  border-radius: 50%;
 }
 
 #social a:hover {
-	background: var(--highlight-color);
+  background: var(--highlight-color);
 }
 
 /*
  * Animação do Switch
  */
 @keyframes slide-in {
-	from {
-		left: 0;
-	}
-	to {
-		left: 100%;
-		transform: translate(-90%, -50%);
-	}
+  from {
+    left: 0;
+  }
+  to {
+    left: 100%;
+    transform: translate(-90%, -50%);
+  }
 }
 
 @keyframes slide-back {
-	from {
-		left: 50%;
-	}
-	to {
-		left: 0;
-	}
+  from {
+    left: 50%;
+  }
+  to {
+    left: 0;
+  }
 }
