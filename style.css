@@ -41,8 +41,7 @@
 
   --text-color: silver;
 
- /*/ --stroke-color: rgba(0, 0, 0, 0.5);/*/
-  --stroke-color: gold;
+  --stroke-color: silver;
   --surface-color: rgba(0, 0, 0, 0.05);
   --surface-color-hover: rgba(0, 0, 0, 0.02);
   --highlight-color: gold;
@@ -142,7 +141,6 @@ Temas
 .light #switch button {
   animation: slide-in 0.5s forwards;
   background: silver;
-
 }
 
 /*
@@ -168,12 +166,13 @@ Links
   -webkit-backdrop-filter: blur(0.25rem);
   text-decoration: none;
   font-weight: 500;
-  transition: background 1s;
+  transition: background 3s;
 }
 
 #links a:hover {
   background: var(--surface-color-hover);
-  border: 1.5px solid var(--text-color);
+  border: 1.5px solid whitesmoke
+  ;
 }
 
 /*
@@ -192,12 +191,12 @@ Links
   justify-content: center;
   padding: 1rem;
 
-  transition: background 0.2s;
-  border-radius: 50%;
+  transition: background 0.5s;
+  border-radius: 60%;
 }
 
 #social a:hover {
-  background: var(--highlight-color);
+  background: gold
 }
 
 /*
