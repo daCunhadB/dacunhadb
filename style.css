@@ -40,9 +40,9 @@
   --bg-degrees: 315deg;
   --switch-bg-url: url(./assets/Light.png);
 
-  --text-color: silver;
+  --text-color: gold;
 
-  --stroke-color: silver;
+  --stroke-color: gold;
   --surface-color: rgba(0, 0, 0, 0.05);
   --surface-color-hover: rgba(0, 0, 0, 0.02);
   --highlight-color: gold;
@@ -177,8 +177,8 @@ Links
 
 .light #links a:hover {
   background: var(--surface-color-hover);
-  border: 1.5px solid gold;
-  -webkit-text-fill-color: gold;
+  border: 1.5px solid silver;
+  -webkit-text-fill-color: silver;
 }
 
 /*
@@ -202,7 +202,7 @@ Links
 }
 
 #social a:hover {
-  background: gold
+  background: silver
 }
 
 /*
