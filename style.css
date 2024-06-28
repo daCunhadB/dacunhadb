@@ -13,8 +13,8 @@
  Aparência
  */
 :root {
-  --purple: rgb(29, 11, 29);
-  --gold: rgb(29, 2, 24);
+  --purple: rgb(110, 82, 110);
+  --gold: rgb(29, 11, 29);
   --bg-degrees: 45deg;
   --switch-bg-url: url(./assets/Light.png);
 
@@ -31,12 +31,12 @@
 }
 
 .light {
-  --purple: rgb(198, 161, 221);
-  --pink: rgb(249, 8, 149);
+  --purple: rgb(190, 173, 152);
+  --gold: rgb(171, 104, 5);
   --bg-degrees: 315deg;
   --switch-bg-url: url(./assets/Light.png);
 
-  --text-color: black;
+  --text-color: rgb(115, 45, 45);
 
   --stroke-color: rgba(0, 0, 0, 0.5);
   --surface-color: rgba(0, 0, 0, 0.05);
@@ -119,7 +119,7 @@ Temas
   border: 0;
   border-radius: 60%;
   cursor: pointer;
-  background: white var(--switch-bg-url) no-repeat center;
+  background: black; var(--switch-bg-url) no-repeat center;
 
   position: absolute;
   top: 50%;
@@ -137,6 +137,8 @@ Temas
 
 .light #switch button {
   animation: slide-in 0.5s forwards;
+  background: whitesmoke; var(--switch-bg-url) no-repeat center;
+
 }
 
 /*
