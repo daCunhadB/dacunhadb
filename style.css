@@ -13,35 +13,39 @@
  Aparência
  */
 :root {
-  --purple: rgb(110, 82, 110);
-  --gold: rgb(29, 11, 29);
+  --grape: rgb(110, 82, 110);
+  --purple: rgb(29, 11, 29);
   --bg-degrees: 45deg;
   --switch-bg-url: url(./assets/Light.png);
 
   --text-color: white;
   --body-font: "Inter", sans-serif;
   --body-bg: no-repeat
-    linear-gradient(var(--bg-degrees), var(--purple) 0%, var(--gold) 100%)
+    linear-gradient(var(--bg-degrees), var(--grape) 0%, var(--purple) 100%)
     center/cover;
 
-  --stroke-color: rgba(255, 255, 255, 0.5);
+  --stroke-color: silver;
   --surface-color: rgba(255, 255, 255, 0.1);
   --surface-color-hover: rgba(255, 255, 255, 0.05);
   --highlight-color: rgba(255, 255, 255, 0.2);
 }
 
 .light {
-  --purple: rgb(190, 173, 152);
-  --gold: rgb(171, 104, 5);
+  --body-bg: no-repeat
+    linear-gradient(var(--bg-degrees), var(--rose) 0%, var(--golden) 100%)
+    center/cover;
+  --rose: rgb(190, 173, 152);
+  --golden: rgb(171, 104, 5);
   --bg-degrees: 315deg;
   --switch-bg-url: url(./assets/Light.png);
 
-  --text-color: rgb(115, 45, 45);
+  --text-color: silver;
 
-  --stroke-color: rgba(0, 0, 0, 0.5);
+ /*/ --stroke-color: rgba(0, 0, 0, 0.5);/*/
+  --stroke-color: gold;
   --surface-color: rgba(0, 0, 0, 0.05);
   --surface-color-hover: rgba(0, 0, 0, 0.02);
-  --highlight-color: rgba(0, 0, 0, 0.1);
+  --highlight-color: gold;
 }
 
 /*
@@ -119,7 +123,7 @@ Temas
   border: 0;
   border-radius: 60%;
   cursor: pointer;
-  background: black; var(--switch-bg-url) no-repeat center;
+  background: rgb(20, 14, 41); var(--switch-bg-url) no-repeat center;
 
   position: absolute;
   top: 50%;
@@ -137,7 +141,7 @@ Temas
 
 .light #switch button {
   animation: slide-in 0.5s forwards;
-  background: whitesmoke; var(--switch-bg-url) no-repeat center;
+  background: silver;
 
 }
 
