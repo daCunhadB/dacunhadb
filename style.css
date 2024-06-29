@@ -149,14 +149,14 @@ Links
 */
 #links {
   padding: 1.5rem;
-  display: flex;
+  display: -webkit-flex;
   flex-direction: column;
   gap: 1rem;
   padding: 1.5rem;
 }
 
 #links a {
-  display: flex;
+  display: -webkit-flex;
   align-items: center;
   justify-content: center;
   padding: 1rem 1.5rem;
@@ -191,14 +191,14 @@ Links
  * Redes Sociais
  */
 #social {
-  display: flex;
+  display: -webkit-flex;
   justify-content: center;
   padding: 1.5rem 0;
   font-size: 1.5rem;
 }
 
 #social a {
-  display: flex;
+  display: -webkit-flex;
   align-items: center;
   justify-content: center;
   padding: 1rem;
