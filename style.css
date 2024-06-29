@@ -180,11 +180,11 @@ Links
 }
 
 .light #links a:hover {
-  background: var(--surface-color-hover);
-  border: 1.5px solid var(--stroke-color);
+  background: var(--golden);
+  border: 1.5px solid var(--text-color);
   -webkit-text-fill-color: var(--highlight-color);
   animation: 0.5s forwards;
-  background: var(--golden);
+  background: var(--surface-color-hover);
 }
 
 /*
