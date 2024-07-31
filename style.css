@@ -50,6 +50,7 @@
 
 .zoom {
   background-color: none;
+  -webkit-animation: reveal 1ms ease-out reverse;
   animation: reveal 1ms ease-out reverse;
   animation-timeline: view();
   transition: transform 3.0s; /* Animation */
@@ -166,6 +167,7 @@ Temas
 Links
 */
 #links-1 {
+  -webkit-animation: reveal 1ms ease-in-out both;
   animation: reveal 1ms ease-in-out both;
   animation-timeline: view();
   animation-range: entry 30% cover 35%;
@@ -212,6 +214,7 @@ Links
 }
 
 #links-2 {
+  -webkit-animation: reveal 1ms ease-in-out both;
   animation: reveal 1ms ease-in-out both;
   animation-timeline: view();
   animation-range: cover cover 200px;
@@ -262,6 +265,7 @@ Links
  * Redes Sociais
  */
 #social {
+  -webkit-animation: reveal 1ms ease-in-out both;
   animation: reveal 1ms ease-in-out both;
   animation-timeline: view();
   animation-range: entry 10% cover 25%;
@@ -294,6 +298,7 @@ Links
  */
 
  .c-indicator {
+  -webkit-animation: scroll 1ms ease-in-out;
   animation: scroll 1ms ease-in-out;
   animation-timeline: scroll(root);
   background-color: var(--purple);
