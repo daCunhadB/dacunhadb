@@ -40,4 +40,4 @@ Esse projeto está sob a licença MIT.
 
 ---
 
-Feito por daCunhaLEM
+Feito por daCunhaLdB
