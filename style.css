@@ -146,7 +146,7 @@ Temas
   border: 0;
   border-radius: 60%;
   cursor: pointer;
-  background: silver;
+  background: var(--steelblue);
   position: absolute;
   top: 50%;
   left: 0;
@@ -157,12 +157,12 @@ Temas
 }
 
 #switch button:hover {
-  outline: 8px solid var(--stroke-color);
+  outline: 8px solid silver;
 }
 
 .light #switch button {
   animation: slide-in 0.5s forwards;
-  background: var(--text-color);
+  background: var(--golden);
 }
 
 .light #switch button:hover {
