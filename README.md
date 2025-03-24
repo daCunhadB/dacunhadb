@@ -1,7 +1,7 @@
-<h1 align="center"> daCunhaLEM </h1>
+<h1 align="center"> daCunhadB </h1>
 
 <p align="center">
-Desafio Discover da Rocketseat, by daCunhaLEM
+Desafio Discover da Rocketseat, by daCunhadB
 </p>
 
 <p align="center">
@@ -40,4 +40,4 @@ Esse projeto está sob a licença MIT.
 
 ---
 
-Feito por daCunhaLEM
+Feito por daCunhadB
