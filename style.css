@@ -23,8 +23,9 @@
   --body-bg: no-repeat
     linear-gradient(
       var(--bg-degrees),
-      var(--neptuneblue) 25%,
-      var(--steelblue) 100%
+      var(--steelblue) 0,
+      39%,
+      var(--neptuneblue) 100%
     )
     center/cover;
 
@@ -36,7 +37,7 @@
 
 .light {
   --body-bg: no-repeat
-    linear-gradient(var(--bg-degrees), var(--rose) 0, 6%, var(--golden) 100%)
+    linear-gradient(var(--bg-degrees), var(--rose) 0, 18%, var(--golden) 100%)
     center/cover;
 
   --rose: #c6b5a0;
