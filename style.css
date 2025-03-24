@@ -133,7 +133,7 @@ Temas
   display: block;
   width: 100%;
   height: 1.5rem;
-  background: var(--steelblue);
+  background: var(--golden);
   border: 1px solid var(--stroke-color);
   -webkit-backdrop-filter: blur(0.25rem);
   backdrop-filter: blur(0.25rem);
