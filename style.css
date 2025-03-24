@@ -163,7 +163,7 @@ Temas
 
 .light #switch button {
   animation: slide-in 0.5s forwards;
-  background: var(--golden);
+  background: silver;
 }
 
 .light #switch button:hover {
