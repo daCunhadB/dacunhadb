@@ -13,8 +13,8 @@
  Aparência
  */
 :root {
-  --grape: hex #7aaab9;
-  --purple: hex #4682b4;
+  --grape: <hex-color> "#7aaab9";
+  --purple: <hex-color> "#4682b4";
   --bg-degrees: 45deg;
   --switch-bg-url: url(./assets/Light.png);
 
