@@ -1,7 +1,7 @@
 /*
  Reset de body
  */
- * {
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -13,38 +13,42 @@
  Aparência
  */
 :root {
-  --grape: <hex-color> "#7aaab9";
-  --purple: <hex-color> "#4682b4";
-  --bg-degrees: 45deg;
+  --neptuneblue: #7aaab9;
+  --steelblue: #4682b4;
+  --bg-degrees: 235deg;
   --switch-bg-url: url(./assets/Light.png);
 
-  --text-color: silver;
+  --text-color: #9a6413;
   --body-font: "Inter", sans-serif;
   --body-bg: no-repeat
-    linear-gradient(var(--bg-degrees), var(--grape) 0%, var(--purple) 100%)
+    linear-gradient(
+      var(--bg-degrees),
+      var(--neptuneblue) 25%,
+      var(--steelblue) 100%
+    )
     center/cover;
 
-  --stroke-color: silver;
-  --surface-color: rgba(255, 255, 255, 0.1);
-  --surface-color-hover: rgba(255, 255, 255, 0.05);
-  --highlight-color: rgba(255, 255, 255, 0.2);
+  --stroke-color: #9a6413;
+  --surface-color: #ffffff1a;
+  --surface-color-hover: #ffffff0d;
+  --highlight-color: gold;
 }
 
 .light {
   --body-bg: no-repeat
-    linear-gradient(var(--bg-degrees), var(--rose) 0%, var(--golden) 100%)
+    linear-gradient(var(--bg-degrees), var(--rose) 3%, var(--golden) 100%)
     center/cover;
 
-  --rose: rgb(198, 181, 160);
-  --golden: rgb(154, 100, 19);
-  --bg-degrees: 315deg;
+  --rose: #c6b5a0;
+  --golden: #9a6413;
+  --bg-degrees: 235deg;
   --switch-bg-url: url(./assets/Light.png);
 
   --text-color: silver;
 
   --stroke-color: gold;
-  --surface-color: rgba(0, 0, 0, 0.05);
-  --surface-color-hover: rgba(0, 0, 0, 0.02);
+  --surface-color: #0000000d;
+  --surface-color-hover: #00000005;
   --highlight-color: gold;
 }
 
@@ -53,18 +57,18 @@
   -webkit-animation: reveal 1ms ease-out reverse;
   animation: reveal 1ms ease-out reverse;
   animation-timeline: view();
-  transition: transform 3.0s; /* Animation */
+  transition: transform 3s; /* Animation */
   animation-range: entry 30% cover 100%;
-  transform: scale(1.0);
+  transform: scale(1);
 
   width: 100px;
   height: 100px;
   margin: 0 auto;
 }
-
+/*
 .zoom:hover {
 }
-
+*/
 
 /*
  Corpo da Página
@@ -98,10 +102,8 @@ ul {
 }
 
 #profile {
-  
   margin-bottom: 1.5rem;
 }
-
 
 .avatar {
   width: 7rem;
@@ -131,7 +133,7 @@ Temas
   display: block;
   width: 100%;
   height: 1.5rem;
-  background: var(--purple);
+  background: var(--steelblue);
   border: 1px solid var(--stroke-color);
   -webkit-backdrop-filter: blur(0.25rem);
   backdrop-filter: blur(0.25rem);
@@ -144,7 +146,7 @@ Temas
   border: 0;
   border-radius: 60%;
   cursor: pointer;
-  background: var(--purple);
+  background: var(--steelblue);
   position: absolute;
   top: 50%;
   left: 0;
@@ -202,7 +204,7 @@ Links
   border: 1.5px solid white;
   -webkit-text-fill-color: white;
   animation: 0.5s forwards;
-  background: var(--purple);
+  background: var(--steelblue);
 }
 
 .light #links-1 a:hover {
@@ -250,7 +252,7 @@ Links
   border: 1.5px solid white;
   -webkit-text-fill-color: white;
   animation: 0.5s forwards;
-  background: var(--purple);
+  background: var(--steelblue);
 }
 
 .light #links-2 a:hover {
@@ -286,7 +288,7 @@ Links
 }
 
 #social a:hover {
-  background: var(--purple);
+  background: var(--steelblue);
 }
 
 .light #social a:hover {
@@ -297,11 +299,11 @@ Links
  * Animação
  */
 
- .c-indicator {
+.c-indicator {
   -webkit-animation: scroll 1ms ease-in-out;
   animation: scroll 1ms ease-in-out;
   animation-timeline: scroll(root);
-  background-color: var(--purple);
+  background-color: var(--steelblue);
   transform-origin: left;
   height: var(--scroll-height);
   inset: 0;
@@ -327,12 +329,11 @@ Links
   }
 }
 
-
 @keyframes scroll {
   from {
     scale: 0 1;
   }
-  
+
   to {
     scale: 1 1;
   }
@@ -349,4 +350,3 @@ Links
     clip-path: inset(0% 0% 0% 0%);
   }
 }
-
