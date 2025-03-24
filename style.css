@@ -37,12 +37,12 @@
 
 .light {
   --body-bg: no-repeat
-    linear-gradient(var(--bg-degrees), var(--rose) 0, 18%, var(--golden) 100%)
+    linear-gradient(var(--bg-degrees), var(--rose) 0, 12%, var(--golden) 100%)
     center/cover;
 
   --rose: #c6b5a0;
   --golden: #9a6413;
-  --bg-degrees: 235deg;
+  --bg-degrees: 45deg;
   --switch-bg-url: url(./assets/Light.png);
 
   --text-color: silver;
