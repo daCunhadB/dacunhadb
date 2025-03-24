@@ -36,7 +36,7 @@
 
 .light {
   --body-bg: no-repeat
-    linear-gradient(var(--bg-degrees), var(--rose) 3%, var(--golden) 100%)
+    linear-gradient(var(--bg-degrees), var(--rose) 0, 6%, var(--golden) 100%)
     center/cover;
 
   --rose: #c6b5a0;
