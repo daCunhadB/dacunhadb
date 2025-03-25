@@ -158,7 +158,7 @@ Temas
 }
 
 #switch button:hover {
-  outline: 8px solid #9a6413;
+  outline: 8px solid var(--munsellblue);
 }
 
 .light #switch button {
