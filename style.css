@@ -14,7 +14,7 @@
  */
 :root {
   --neptuneblue: #7aaab9;
-  --steelblue: #4682b4;
+  --munsellblue: #5b92a2;
   --bg-degrees: 45deg;
   --switch-bg-url: url(./assets/Light.png);
 
@@ -23,8 +23,8 @@
   --body-bg: no-repeat
     linear-gradient(
       var(--bg-degrees),
-      var(--steelblue) 0,
-      39%,
+      var(--munsellblue) 0,
+      18%,
       var(--neptuneblue) 100%
     )
     center/cover;
@@ -147,7 +147,7 @@ Temas
   border: 0;
   border-radius: 60%;
   cursor: pointer;
-  background: var(--steelblue);
+  background: silver;
   position: absolute;
   top: 50%;
   left: 0;
@@ -158,7 +158,7 @@ Temas
 }
 
 #switch button:hover {
-  outline: 8px solid silver;
+  outline: 8px solid #9a6413;
 }
 
 .light #switch button {
@@ -208,7 +208,7 @@ Links
   border: 1.5px solid silver;
   -webkit-text-fill-color: silver;
   animation: 0.5s forwards;
-  background: var(--steelblue);
+  background: var(--munsellblue);
 }
 
 .light #links-1 a:hover {
@@ -256,7 +256,7 @@ Links
   border: 1.5px solid white;
   -webkit-text-fill-color: white;
   animation: 0.5s forwards;
-  background: var(--steelblue);
+  background: var(--munsellblue);
 }
 
 .light #links-2 a:hover {
@@ -292,7 +292,7 @@ Links
 }
 
 #social a:hover {
-  background: var(--steelblue);
+  background: var(--munsellblue);
 }
 
 .light #social a:hover {
@@ -307,7 +307,7 @@ Links
   -webkit-animation: scroll 1ms ease-in-out;
   animation: scroll 1ms ease-in-out;
   animation-timeline: scroll(root);
-  background-color: var(--steelblue);
+  background-color: var(--munsellblue);
   transform-origin: left;
   height: var(--scroll-height);
   inset: 0;
