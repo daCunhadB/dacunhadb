@@ -14,22 +14,22 @@
  */
 :root {
   --neptuneblue: #7aaab9;
-  --tealblue: #3e758a;
+  --slategray: #4f8697;
   --bg-degrees: 45deg;
   --switch-bg-url: url(./assets/Light.png);
 
-  --text-color: #8f7659;
+  --text-color: #974f62;
   --body-font: "Inter", sans-serif;
   --body-bg: no-repeat
     linear-gradient(
       var(--bg-degrees),
-      var(--tealblue) 0,
+      var(--slategray) 0,
       12%,
       var(--neptuneblue) 100%
     )
     center/cover;
 
-  --stroke-color: #8f7659;
+  --stroke-color: #974f62;
   --surface-color: #ffffff1a;
   --surface-color-hover: #ffffff0d;
   --highlight-color: gold;
@@ -147,7 +147,7 @@ Temas
   border: 0;
   border-radius: 60%;
   cursor: pointer;
-  background: var(--tealblue);
+  background: var(--slategray);
   position: absolute;
   top: 50%;
   left: 0;
@@ -208,7 +208,7 @@ Links
   border: 1.5px solid #eeefea;
   -webkit-text-fill-color: #eeefea;
   animation: 0.5s forwards;
-  background: var(--tealblue);
+  background: var(--slategray);
 }
 
 .light #links-1 a:hover {
@@ -256,7 +256,7 @@ Links
   border: 1.5px solid white;
   -webkit-text-fill-color: white;
   animation: 0.5s forwards;
-  background: var(--tealblue);
+  background: var(--slategray);
 }
 
 .light #links-2 a:hover {
@@ -307,7 +307,7 @@ Links
   -webkit-animation: scroll 1ms ease-in-out;
   animation: scroll 1ms ease-in-out;
   animation-timeline: scroll(root);
-  background-color: var(--tealblue);
+  background-color: var(--slategray);
   transform-origin: left;
   height: var(--scroll-height);
   inset: 0;
