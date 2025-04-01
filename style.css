@@ -18,18 +18,18 @@
   --bg-degrees: 45deg;
   --switch-bg-url: url(./assets/Light.png);
 
-  --text-color: #964b00;
+  --text-color: #e67e73;
   --body-font: "Inter", sans-serif;
   --body-bg: no-repeat
     linear-gradient(
       var(--bg-degrees),
-      var(--neptuneblue) 0,
+      var(--celesteblue) 0,
       24%,
-      var(--celesteblue) 100%
+      var(--neptuneblue) 100%
     )
     center/cover;
 
-  --stroke-color: #964b00;
+  --stroke-color: #e67e73;
   --surface-color: #ffffff1a;
   --surface-color-hover: #ffffff0d;
   --highlight-color: gold;
@@ -153,7 +153,7 @@ Temas
   border: 0;
   border-radius: 60%;
   cursor: pointer;
-  background: var(--neptuneblue);
+  background: #e67e73;
   position: absolute;
   top: 50%;
   left: 0;
@@ -164,7 +164,7 @@ Temas
 }
 
 #switch button:hover {
-  outline: 8px solid silver;
+  outline: 8px solid #f5f5f5;
 }
 
 .light #switch button {
