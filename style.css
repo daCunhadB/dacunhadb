@@ -133,6 +133,10 @@ Temas
   width: 4rem;
   position: relative;
   margin: 0 auto;
+  border: 1px solid #e67e73;
+  -webkit-backdrop-filter: blur(0.25rem);
+  backdrop-filter: blur(0.25rem);
+  border-radius: 9999px;
 }
 
 #switch::after {
@@ -280,7 +284,7 @@ Links
   -webkit-animation: reveal 1ms ease-in-out both;
   animation: reveal 1ms ease-in-out both;
   animation-timeline: view();
-  animation-range: entry 10% cover 25%;
+  animation-range-start: 10% cover 25%;
   display: -webkit-flex;
   justify-content: center;
   padding: 1.5rem 0;
