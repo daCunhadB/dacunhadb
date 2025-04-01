@@ -13,23 +13,23 @@
  Aparência
  */
 :root {
+  --celesteblue: #87ceeb;
   --neptuneblue: #7aaab9;
-  --slategray: #4f8697;
   --bg-degrees: 45deg;
   --switch-bg-url: url(./assets/Light.png);
 
-  --text-color: #974f62;
+  --text-color: #964b00;
   --body-font: "Inter", sans-serif;
   --body-bg: no-repeat
     linear-gradient(
       var(--bg-degrees),
-      var(--slategray) 0,
-      12%,
-      var(--neptuneblue) 100%
+      var(--neptuneblue) 0,
+      24%,
+      var(--celesteblue) 100%
     )
     center/cover;
 
-  --stroke-color: #974f62;
+  --stroke-color: #964b00;
   --surface-color: #ffffff1a;
   --surface-color-hover: #ffffff0d;
   --highlight-color: gold;
@@ -66,10 +66,16 @@
   height: 100px;
   margin: 0 auto;
 }
-/*
+
 .zoom:hover {
+  background-color: none;
+  -webkit-animation: reveal 1ms ease-out reverse;
+  animation: reveal 1ms ease-out reverse;
+  animation-timeline: view();
+  transition: transform 13s; /* Animation */
+  animation-range: entry 30% cover 100%;
+  transform: scale(1);
 }
-*/
 
 /*
  Corpo da Página
@@ -147,7 +153,7 @@ Temas
   border: 0;
   border-radius: 60%;
   cursor: pointer;
-  background: var(--slategray);
+  background: var(--neptuneblue);
   position: absolute;
   top: 50%;
   left: 0;
@@ -205,10 +211,10 @@ Links
 
 #links-1 a:hover {
   background: var(--surface-color-hover);
-  border: 1.5px solid #eeefea;
-  -webkit-text-fill-color: #eeefea;
+  border: 1.5px solid #f5f5f5;
+  -webkit-text-fill-color: #f5f5f5;
   animation: 0.5s forwards;
-  background: var(--slategray);
+  background: var(--neptuneblue);
 }
 
 .light #links-1 a:hover {
@@ -253,10 +259,10 @@ Links
 
 #links-2 a:hover {
   background: var(--surface-color-hover);
-  border: 1.5px solid white;
-  -webkit-text-fill-color: white;
+  border: 1.5px solid f5f5f5;
+  -webkit-text-fill-color: f5f5f5;
   animation: 0.5s forwards;
-  background: var(--slategray);
+  background: var(--neptuneblue);
 }
 
 .light #links-2 a:hover {
@@ -307,7 +313,7 @@ Links
   -webkit-animation: scroll 1ms ease-in-out;
   animation: scroll 1ms ease-in-out;
   animation-timeline: scroll(root);
-  background-color: var(--slategray);
+  background-color: var(--neptuneblue);
   transform-origin: left;
   height: var(--scroll-height);
   inset: 0;
