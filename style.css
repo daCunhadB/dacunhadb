@@ -18,7 +18,7 @@
   --bg-degrees: 45deg;
   --switch-bg-url: url(./assets/Light.png);
 
-  --text-color: #e67e73;
+  --text-color: #964b00;
   --body-font: "Inter", sans-serif;
   --body-bg: no-repeat
     linear-gradient(
@@ -29,7 +29,7 @@
     )
     center/cover;
 
-  --stroke-color: #e67e73;
+  --stroke-color: #964b00;
   --surface-color: #ffffff1a;
   --surface-color-hover: #ffffff0d;
   --highlight-color: gold;
