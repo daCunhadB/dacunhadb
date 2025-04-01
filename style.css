@@ -133,7 +133,7 @@ Temas
   width: 4rem;
   position: relative;
   margin: 0 auto;
-  background: #f5f5f5f5;
+  background: #f8e231;
   -webkit-backdrop-filter: blur(0.25rem);
   backdrop-filter: blur(0.25rem);
   border-radius: 9999px;
@@ -157,7 +157,7 @@ Temas
   border: 0;
   border-radius: 60%;
   cursor: pointer;
-  background: #e67e73;
+  background: #6c5ce7;
   position: absolute;
   top: 50%;
   left: 0;
@@ -214,8 +214,8 @@ Links
 }
 
 #links-1 a:hover {
-  background: var(--surface-color-hover);
-  border: 1.5px solid #f5f5f5;
+  background: #acffac;
+  border: 1.5px solid #acffac;
   -webkit-text-fill-color: #f5f5f5;
   animation: 0.5s forwards;
   background: var(--neptuneblue);
