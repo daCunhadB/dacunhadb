@@ -133,7 +133,7 @@ Temas
   width: 4rem;
   position: relative;
   margin: 0 auto;
-  background: #f8e231;
+  background: #6c5ce7;
   -webkit-backdrop-filter: blur(0.25rem);
   backdrop-filter: blur(0.25rem);
   border-radius: 9999px;
@@ -157,7 +157,7 @@ Temas
   border: 0;
   border-radius: 60%;
   cursor: pointer;
-  background: #6c5ce7;
+  background: #f8e231;
   position: absolute;
   top: 50%;
   left: 0;
