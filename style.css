@@ -134,6 +134,7 @@ ul {
 Temas
 */
 #switch {
+  content: "";
   width: 44px;
   position: relative;
   margin: 0 auto;
@@ -179,13 +180,13 @@ Temas
   background: #ffd700;
 
   outline: 8px solid #ffd700;
+  outline-style: dotted;
+  outline-offset: 3px;
   border-radius: 50%;
   position: absolute;
   top: 50%;
   left: 0;
   z-index: 1;
-  outline-style: dotted;
-  outline-offset: 3px;
 }
 
 .light #switch button {
@@ -212,16 +213,15 @@ Temas
 
   background: silver;
 
-  outline: 8px solid #ffd700;
+  outline: 8px solid var(--highlight-color);
+  outline-style: outset;
+  outline-offset: 2px;
+
   border-radius: 50%;
   position: absolute;
   top: 50%;
   left: 0;
   z-index: 1;
-  outline-style: dotted;
-  outline: 8px solid var(--highlight-color);
-  outline-style: inset;
-  outline-offset: 2px;
 }
 /*
 Links
