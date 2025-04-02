@@ -55,16 +55,20 @@
 
 .zoom {
   background-color: none;
-  -webkit-animation: reveal 1ms ease-out reverse;
-  animation: reveal 1ms ease-out reverse;
-  animation-timeline: view();
-  transition: transform 3s; /* Animation */
-  animation-range: entry 30% cover 100%;
+  transition: ease-in-out; /* Animation */
+  transition-duration: 1s;
+  animation: ease-in-out;
+  animation-timeline: var(--body-font);
+  animation-range: initial 50% cover 100%;
+  animation-range-start: 50%;
+  animation-range-end: 100%;
   transform: scale(1);
 
-  width: 100px;
-  height: 100px;
-  margin: 0 auto;
+  -webkit-animation: ease-in-out;
+  -webkit-animation-timeline: var(--body-font);
+  -webkit-animation-range: initial 50 cover 100%;
+  -webkit-animation-range-start: 50%;
+  -webkit-animation-range-end: 100%;
 }
 
 .zoom:hover {
