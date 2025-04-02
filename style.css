@@ -18,7 +18,7 @@
   --bg-degrees: 45deg;
   --switch-bg-url: url(./assets/Light.png);
 
-  --text-color: #964b00;
+  --text-color: #03055b;
   --body-font: "Inter", sans-serif;
   --body-bg: no-repeat
     linear-gradient(
@@ -29,7 +29,7 @@
     )
     center/cover;
 
-  --stroke-color: #964b00;
+  --stroke-color: #0343df;
   --surface-color: #ffffff1a;
   --surface-color-hover: #ffffff0d;
   --highlight-color: #ffd700;
@@ -138,7 +138,7 @@ Temas
   width: 44px;
   position: relative;
   margin: 0 auto;
-  background: #e67e73;
+  background: #008751;
   -webkit-backdrop-filter: blur(0.25rem);
   backdrop-filter: blur(0.25rem);
   border-radius: 18%;
@@ -162,12 +162,13 @@ Temas
   border: 0;
   border-radius: 18%;
   cursor: pointer;
-  background: #acffac;
+  background: #ffd700;
   position: absolute;
-  top: 50%;
+  bottom: -50%;
   left: 0;
   z-index: 1;
   transform: translateY(-50%);
+  transform: rotate(45deg);
   transition: outline 0.5s;
   animation: slide-back 0.5s;
 }
@@ -184,7 +185,7 @@ Temas
   outline-offset: 3px;
   border-radius: 50%;
   position: absolute;
-  top: 50%;
+  bottom: -37%;
   left: 0;
   z-index: 1;
 }
@@ -214,8 +215,8 @@ Temas
   background: silver;
 
   outline: 8px solid var(--highlight-color);
-  outline-style: outset;
-  outline-offset: 2px;
+  outline-style: solid;
+  outline-offset: 1px;
 
   border-radius: 50%;
   position: absolute;
