@@ -133,7 +133,7 @@ Temas
   width: 4rem;
   position: relative;
   margin: 0 auto;
-  background: #6c5ce7;
+  background: #acffac;
   -webkit-backdrop-filter: blur(0.25rem);
   backdrop-filter: blur(0.25rem);
   border-radius: 9999px;
@@ -168,7 +168,7 @@ Temas
 }
 
 #switch button:hover {
-  outline: 8px solid #acffac;
+  outline: 8px solid #6c5ce7;
 }
 
 .light #switch button {
