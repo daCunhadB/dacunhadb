@@ -165,7 +165,7 @@ Temas
   background: #ffd700;
   
   position: absolute;
-  bottom: -50%;
+  bottom: -49%;
   left: 0;
   z-index: 1;
   transform: translateY(-50%);
