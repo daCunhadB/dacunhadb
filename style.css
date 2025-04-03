@@ -16,7 +16,7 @@
   --celesteblue: #87ceeb;
   --neptuneblue: #7aaab9;
   --bg-degrees: 45deg;
-  --switch-bg-url: url(./assets/Light.png);
+  --switchbutton: url(./assets/brasaoimperiobr.png);
 
   --text-color: #03055b;
   --body-font: "Inter", sans-serif;
@@ -43,7 +43,7 @@
   --rose: #c6b5a0;
   --golden: #9a6413;
   --bg-degrees: 45deg;
-  --switch-bg-url: url(./assets/Light.png);
+  --switchbutton: url(./assets/brasaoimperiobrzerodegrade.png);
 
   --text-color: silver;
 
@@ -77,7 +77,7 @@
   animation: reveal 1ms ease-out reverse;
   animation-timeline: view();
   transition: transform 13s; /* Animation */
-  animation-range: entry 30% cover 100%;
+  animation-range: entry 50% cover 100%;
   transform: scale(1);
 }
 
@@ -133,6 +133,12 @@ ul {
 /*
 Temas
 */
+
+.brasaoimperiobr {
+  width: 90%;
+  object-fit: cover;
+}
+
 #switch {
   content: "";
   width: 44px;
@@ -163,7 +169,7 @@ Temas
   border-radius: 18%;
   cursor: pointer;
   background: #ffd700;
-  
+
   position: absolute;
   bottom: -49%;
   left: 0;
@@ -171,11 +177,10 @@ Temas
   transform: translateY(-50%);
 
   transform: rotate(45deg);
-  
+
   transition: outline 0.5s;
   animation: slide-back 0.5s;
 }
-
 
 #switch button:hover {
   width: 1.5rem;
@@ -209,7 +214,6 @@ Temas
   transition: outline 0.5s;
   animation: slide-back 0.5s;
   animation: slide-in 0.5s forwards;
-  
 }
 
 .light #switch button:hover {
@@ -414,5 +418,3 @@ Links
     clip-path: inset(0% 0% 0% 0%);
   }
 }
-
-

@@ -12,4 +12,13 @@ function toggleMode() {
     // Dark theme avatar
     img.setAttribute("src", "./assets/avatar.png")
   }
+
+  var elemento = document.querySelector("button")
+  if (html.classList.contains("light"))
+    elemento.onanimationstart = function () {
+      this.getElementsByTagName("img")[light].src =
+        "assets/brasaoimperiobrzerodegrade.png"
+    }
+  if (html.classList.contains("dark"))
+    this.getElementsByTagName("img")[dark].src = "assets/brasilimperiobr.png"
 }
