@@ -163,19 +163,23 @@ Temas
   border-radius: 18%;
   cursor: pointer;
   background: #ffd700;
+  
   position: absolute;
   bottom: -50%;
   left: 0;
   z-index: 1;
   transform: translateY(-50%);
+
   transform: rotate(45deg);
+  
   transition: outline 0.5s;
   animation: slide-back 0.5s;
 }
 
+
 #switch button:hover {
-  width: 1.3rem;
-  height: 1.3rem;
+  width: 1.5rem;
+  height: 1.5rem;
   border: 0;
 
   background: #ffd700;
@@ -205,11 +209,12 @@ Temas
   transition: outline 0.5s;
   animation: slide-back 0.5s;
   animation: slide-in 0.5s forwards;
+  
 }
 
 .light #switch button:hover {
-  width: 1.3rem;
-  height: 1.3rem;
+  width: 1.5rem;
+  height: 1.5rem;
   border: 0;
 
   background: silver;
@@ -308,8 +313,8 @@ Links
 
 #links-2 a:hover {
   background: var(--surface-color-hover);
-  border: 1.5px solid f5f5f5;
-  -webkit-text-fill-color: f5f5f5;
+  border: 1.5px solid #acffac;
+  -webkit-text-fill-color: #acffac;
   animation: 0.5s forwards;
   background: var(--neptuneblue);
 }
@@ -347,7 +352,7 @@ Links
 }
 
 #social a:hover {
-  background: silver;
+  background: #acffac;
 }
 
 .light #social a:hover {
@@ -409,3 +414,5 @@ Links
     clip-path: inset(0% 0% 0% 0%);
   }
 }
+
+
