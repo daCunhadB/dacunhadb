@@ -234,9 +234,9 @@ Temas
 
   background: silver;
 
-  outline: 6px solid var(--highlight-color);
+  outline: 4px solid var(--highlight-color);
   outline-style: solid;
-  outline-offset: 1px;
+  outline-offset: 2.5px;
 
   border-radius: 50%;
   position: absolute;
