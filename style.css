@@ -179,14 +179,15 @@ Temas
 
 .brasaoimperiobr img #switch button {
   width: 100%;
+  position: absolute;
   object-position: initial bottom;
   object-fit: cover fill;
   image-rendering: optimizeQuality;
 }
 
 #switch button:hover {
-  width: 1.7rem;
-  height: 1.7rem;
+  width: 1.8rem;
+  height: 1.8rem;
   border: 0;
 
   background: #ffd700;
@@ -220,14 +221,15 @@ Temas
 
 .brasaoimperiobr img .light #switch button {
   width: 100%;
+  position: absolute;
   object-position: initial bottom;
   object-fit: cover fill;
   image-rendering: optimizeQuality;
 }
 
 .light #switch button:hover {
-  width: 1.7rem;
-  height: 1.7rem;
+  width: 1.8rem;
+  height: 1.8rem;
   border: 0;
 
   background: silver;
