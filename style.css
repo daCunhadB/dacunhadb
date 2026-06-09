@@ -255,7 +255,7 @@ Links
   padding: 1rem;
   font-family: var(--body-font);
   text-align: center;
-  font-size: large;
+  font-size: medium;
   font-weight: 1000;
 }
 
@@ -270,7 +270,7 @@ Links
   backdrop-filter: blur(0.25rem);
   -webkit-backdrop-filter: blur(0.25rem);
   text-decoration: none;
-  font-size: large;
+  font-size: medium;
   font-weight: 400;
   transition: var(--bg-degrees) 1.4s;
 }
@@ -303,7 +303,7 @@ Links
   padding: 1rem;
   font-family: var(--body-font);
   text-align: center;
-  font-size: large;
+  font-size: medium;
   font-weight: 1000;
 }
 
@@ -318,7 +318,7 @@ Links
   backdrop-filter: blur(0.25rem);
   -webkit-backdrop-filter: blur(0.25rem);
   text-decoration: none;
-  font-size: large;
+  font-size: medium;
   font-weight: 400;
   transition: background 1.4s;
 }
