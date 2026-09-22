@@ -1,7 +1,36 @@
-/*
- Reset de body
- */
-* {
+/* =========================================================================
+   ÍNDICE GERAL (style.css)
+   =========================================================================
+   1.  Reset & Base
+   2.  Variáveis (Custom Properties) — Tema Escuro (padrão)
+   3.  Tema Claro (.light)
+   4.  Acessibilidade utilitária (foco visível, texto oculto)
+   5.  Corpo da Página & Container
+   6.  Header / Perfil
+       6.1 Avatar
+       6.2 Lista de títulos
+   7.  Alternância de Tema (#switch)
+   8.  Imagem de Destaque (hero-figure)
+   9.  Títulos de Seção (h3 / h4 / h5 / h6)
+   10. Listas de Links (.link-list)
+   11. Seção de Vídeos (.video-list / .video-item)
+   12. Redes Sociais (#social)
+   13. Indicador de Progresso de Rolagem (.c-indicator)
+   14. Efeitos de Interação — Zoom / Luz & Sombra
+       14.1 Zoom em imagens (.zoom-img)
+       14.2 Zoom em links/texto (.zoom-link)
+   15. Animações de Revelação ao Rolar (data-reveal)
+   16. Keyframes
+   17. Responsividade (mobile-first breakpoints)
+   18. Movimento Reduzido (prefers-reduced-motion)
+   ========================================================================= */
+
+/* -------------------------------------------------------------------------
+   1. Reset & Base
+   ------------------------------------------------------------------------- */
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -9,14 +38,19 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-/*
- Aparência
- */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* -------------------------------------------------------------------------
+   2. Variáveis — Tema Escuro (padrão)
+   ------------------------------------------------------------------------- */
 :root {
+  /* Paleta */
   --celesteblue: #87ceeb;
   --neptuneblue: #7aaab9;
   --bg-degrees: 45deg;
-  --switchbutton: url(./assets/brasaoimperiobr.png);
 
   --text-color: #03055b;
   --body-font: "Inter", sans-serif;
@@ -33,61 +67,120 @@
   --surface-color: #ffffff1a;
   --surface-color-hover: #ffffff0d;
   --highlight-color: #ffd700;
+
+  /* Luz & sombra */
+  --shadow-soft: 0 2px 6px rgba(0, 0, 0, 0.18);
+  --shadow-elevated: 0 10px 30px rgba(0, 0, 0, 0.35);
+  --shadow-inset: inset 0 1px 0 rgba(255, 255, 255, 0.25);
+  --glow-highlight: 0 0 18px rgba(255, 215, 0, 0.55);
+  --text-shadow-soft: 0 1px 2px rgba(0, 0, 0, 0.35);
+
+  /* Movimento */
+  --transition-fast: 0.25s ease;
+  --transition-base: 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  --transition-slow: 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  --zoom-scale: 1.06;
+
+  /* Escala de espaçamento (usada na diagramação geral) */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 1rem;
+  --space-4: 1.5rem;
+  --space-5: 2.5rem;
+
+  /* Bandeira Imperial do Brasil — usada no botão de tema (§7):
+     retângulo verde 10:7 e losango amarelo com o brasão ao centro. */
+  --flag-green: #009c3b; /* verde do retângulo (tema escuro) */
+  --flag-green-deep: #046a38; /* verde do retângulo (tema claro) */
+  --flag-yellow: #ffdf00; /* amarelo do losango */
+  --flag-track-w: 3.6rem;
+  --flag-track-h: 2.52rem; /* 3.6 / 2.52 = 10:7, proporção real da bandeira */
+  --flag-thumb-side: 1.5rem; /* lado do quadrado antes de girar 45° */
+  --flag-thumb-diagonal: 2.121rem; /* lado × √2 — diagonal do losango */
+  --flag-thumb-inset: 0.28rem; /* respiro entre o losango e a borda do trilho */
+  /* Girar o quadrado em torno do próprio centro faz o losango "crescer"
+     (lado → diagonal) sem mover esse centro. Este valor corrige o
+     posicionamento (top/left) para compensar essa diferença e manter o
+     losango realmente centralizado/alinhado dentro do trilho. */
+  --flag-thumb-center-offset: calc(
+    (var(--flag-thumb-diagonal) - var(--flag-thumb-side)) / 2
+  );
+
+  /* Tipografia fluida: cresce/encolhe suavemente entre telas
+     extremamente pequenas (~280px) e grandes (~1440px), reduzindo a
+     necessidade de sobrescrever tamanhos em cada breakpoint. */
+  --fs-body: clamp(0.8rem, 0.74rem + 0.3vw, 0.95rem);
+  --fs-h1: clamp(1rem, 0.85rem + 1vw, 1.35rem);
+  --fs-h3: clamp(1rem, 0.92rem + 0.5vw, 1.2rem);
+  --fs-h6: clamp(0.62rem, 0.58rem + 0.2vw, 0.75rem);
 }
 
+/* -------------------------------------------------------------------------
+   3. Tema Claro (.light)
+   ------------------------------------------------------------------------- */
 .light {
+  --rose: #c6b5a0;
+  --golden: #9a6413;
+  --bg-degrees: 45deg;
+
   --body-bg: no-repeat
     linear-gradient(var(--bg-degrees), var(--rose) 0, 12%, var(--golden) 100%)
     center/cover;
 
-  --rose: #c6b5a0;
-  --golden: #9a6413;
-  --bg-degrees: 45deg;
-  --switchbutton: url(./assets/brasaoimperiobrzerodegrade.png);
-
   --text-color: silver;
-
   --stroke-color: #ffd700;
   --surface-color: #0000000d;
   --surface-color-hover: #00000005;
   --highlight-color: #ffd700;
+
+  --shadow-soft: 0 2px 6px rgba(0, 0, 0, 0.3);
+  --shadow-elevated: 0 10px 30px rgba(0, 0, 0, 0.45);
+  --shadow-inset: inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  --glow-highlight: 0 0 20px rgba(255, 215, 0, 0.7);
+  --text-shadow-soft: 0 1px 3px rgba(0, 0, 0, 0.55);
 }
 
-.zoom {
-  background-color: none;
-  transition: ease-in-out; /* Animation */
-  transition-duration: 1s;
-  animation: ease-in-out;
-  animation-timeline: var(--body-font);
-  animation-range: initial 50% cover 100%;
-  animation-range-start: 50%;
-  animation-range-end: 100%;
-  transform: scale(1);
-
-  -webkit-animation: ease-in-out;
-  -webkit-animation-timeline: var(--body-font);
-  -webkit-animation-range: initial 50 cover 100%;
-  -webkit-animation-range-start: 50%;
-  -webkit-animation-range-end: 100%;
+/* -------------------------------------------------------------------------
+   4. Acessibilidade utilitária
+   ------------------------------------------------------------------------- */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
-.zoom:hover {
-  background-color: none;
-  -webkit-animation: reveal 1ms ease-out reverse;
-  animation: reveal 1ms ease-out reverse;
-  animation-timeline: view();
-  transition: transform 13s; /* Animation */
-  animation-range: entry 50% cover 100%;
-  transform: scale(1);
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--highlight-color);
+  outline-offset: 3px;
+  border-radius: 0.4rem;
 }
 
-/*
- Corpo da Página
- */
+/* -------------------------------------------------------------------------
+   5. Corpo da Página & Container
+   ------------------------------------------------------------------------- */
+html {
+  scroll-behavior: smooth;
+}
+
 html,
 body {
   min-height: 100vh;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden; /* evita rolagem horizontal em telas extremamente pequenas */
   background: var(--body-bg);
+  background-attachment: fixed;
+}
+
+body {
+  transition: background var(--transition-slow);
 }
 
 body * {
@@ -98,318 +191,490 @@ ul {
   list-style: none;
 }
 
-/*
- Perfil
- */
 .container {
   width: 100%;
   max-width: 70rem;
   margin: 0 auto;
-  padding-top: 1.5rem;
+  padding: clamp(1rem, 0.7rem + 1.2vw, 1.5rem)
+    clamp(0.65rem, 0.4rem + 1vw, 1rem) clamp(1.5rem, 1rem + 2vw, 3rem);
   font-family: var(--body-font);
   text-align: center;
-  font-size: smaller;
+  font-size: var(--fs-body);
   font-weight: 1000;
 }
 
-#profile {
-  margin-bottom: 1.5rem;
+/* -------------------------------------------------------------------------
+   6. Header / Perfil
+   ------------------------------------------------------------------------- */
+.site-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
 }
 
+#profile {
+  margin-bottom: var(--space-3);
+  max-width: 34rem;
+  margin-inline: auto;
+}
+
+#profile h1 {
+  font-size: var(--fs-h1);
+  line-height: 1.3;
+  text-shadow: var(--text-shadow-soft);
+  overflow-wrap: break-word;
+}
+
+/* 6.1 Avatar */
 .avatar {
-  width: 7rem;
-  height: 7rem;
-  margin: 0 auto 1rem;
+  width: clamp(4.5rem, 3.6rem + 9vw, 7rem);
+  height: clamp(4.5rem, 3.6rem + 9vw, 7rem);
+  margin: 0 auto var(--space-3);
   overflow: hidden;
   border-radius: 50%;
   border: 2px solid var(--stroke-color);
+  box-shadow: var(--shadow-elevated), var(--shadow-inset);
+  transition:
+    box-shadow var(--transition-base),
+    border-color var(--transition-base);
+}
+
+.avatar:hover,
+.avatar:focus-within {
+  box-shadow: var(--shadow-elevated), var(--glow-highlight);
+  border-color: var(--highlight-color);
 }
 
 .avatar img {
   width: 100%;
+  height: 100%;
   object-fit: cover;
 }
 
-/*
-Temas
-*/
+/* 6.2 Lista de títulos */
+.titles-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  margin-top: var(--space-1);
+}
 
-#switch {
-  content: "";
-  width: 51px;
+.titles-list h6 {
+  font-size: var(--fs-h6);
+  overflow-wrap: break-word;
+}
+
+.flags {
+  margin-top: var(--space-2);
+  letter-spacing: 0.05rem;
+  font-size: clamp(0.85rem, 0.75rem + 0.6vw, 1.1rem);
+  line-height: 1.6;
+}
+
+/* -------------------------------------------------------------------------
+   7. Alternância de Tema (.theme-switch) — motivo da Bandeira Imperial
+   -------------------------------------------------------------------------
+   O trilho reproduz as proporções reais do retângulo verde da Bandeira do
+   Império do Brasil (10:7). Dentro dele desliza um losango amarelo — o
+   "thumb" é um quadrado girado 45° (transform: rotate) para virar diamante,
+   exatamente como o losango pousado sobre o retângulo da bandeira. O ícone
+   do brasão, por sua vez, recebe a rotação inversa (-45°) para permanecer
+   ereto dentro do losango, em vez de girar junto com o botão.
+   ------------------------------------------------------------------------- */
+.switch-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  margin-top: var(--space-2);
+}
+
+.theme-switch {
   position: relative;
-  margin: 0 auto;
-  background: #008751;
-  -webkit-backdrop-filter: blur(0.25rem);
-  backdrop-filter: blur(0.25rem);
-  border-radius: 18%;
+  width: var(--flag-track-w);
+  height: var(--flag-track-h);
+  flex-shrink: 0;
+  background: var(--flag-green);
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 0.3rem; /* cantos levemente arredondados, como um retângulo de bandeira */
+  box-shadow:
+    var(--shadow-soft),
+    inset 0 1px 3px rgba(0, 0, 0, 0.3);
+  transition:
+    background var(--transition-base),
+    box-shadow var(--transition-base);
 }
 
-#switch::after {
-  content: "";
-  display: block;
-  width: 100%;
-  height: 12px;
-  background: var(--golden);
-  border: 1px solid var(--stroke-color);
-  -webkit-backdrop-filter: blur(0.25rem);
-  backdrop-filter: blur(0.25rem);
-  border-radius: 18%;
+.light .theme-switch {
+  background: var(--flag-green-deep);
 }
 
-#switch button {
-  width: 1.8rem;
-  height: 1.8rem;
+.theme-switch button {
+  position: absolute;
+  top: 50%;
+  /* alinhamento corrigido: o centro do quadrado (não a diagonal do losango
+     já girado) é o que precisa ficar a "inset" da borda do trilho */
+  left: calc(var(--flag-thumb-inset) + var(--flag-thumb-center-offset));
+  width: var(--flag-thumb-side);
+  height: var(--flag-thumb-side);
+  margin-top: calc(var(--flag-thumb-side) / -2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border: 0;
-  border-radius: 18%;
+  border-radius: 1px; /* pontas do losango bem definidas, como na bandeira */
   cursor: pointer;
-  background: #ffd700;
-
-  position: absolute;
-  bottom: -50%;
-  left: 0;
-  z-index: 1;
-  transform: translateY(-50%);
-
-  transform: rotate(45deg);
-
-  transition: outline 0.5s;
-  animation: slide-back 0.5s;
+  background: var(--flag-yellow);
+  box-shadow: var(--shadow-soft);
+  transform: rotate(45deg); /* quadrado → losango */
+  transition:
+    left var(--transition-base),
+    box-shadow var(--transition-fast);
 }
 
-.brasaoimperiobr img #switch button {
-  width: 100%;
-  position: absolute;
-  object-position: initial bottom;
-  object-fit: cover fill;
-  image-rendering: optimizeQuality;
+.light .theme-switch button {
+  left: calc(
+    100% - var(--flag-thumb-diagonal) - var(--flag-thumb-inset) +
+      var(--flag-thumb-center-offset)
+  );
 }
 
-#switch button:hover {
-  width: 1.8rem;
-  height: 1.8rem;
-  border: 0;
-
-  background: #ffd700;
-
-  outline: 8px solid #ffd700;
-  outline-style: dotted;
+.theme-switch button:hover,
+.theme-switch button:focus-visible {
+  outline: 3px solid var(--highlight-color);
   outline-offset: 3px;
-  border-radius: 50%;
-  position: absolute;
-  bottom: -50%;
-  left: 0;
-  z-index: 1;
+  box-shadow: var(--glow-highlight);
 }
 
-.light #switch button {
-  width: 1.8rem;
-  height: 1.8rem;
-  border: 0;
-  border-radius: 18%;
-  cursor: pointer;
-  background: silver;
-  position: absolute;
-  top: 50%;
-  left: 0;
-  z-index: 1;
-  transform: translateY(-50%);
-  transition: outline 0.5s;
-  animation: slide-back 0.5s;
-  animation: slide-in 0.5s forwards;
+/* Ícone do brasão: o botão (losango) já gira +45°; aqui giramos mais
+   -45° (para a esquerda) no próprio ícone, totalizando -90° em relação
+   ao botão — o que resulta em -45° na tela, posição correta do brasão
+   diante da Bandeira do Império do Brasil. */
+.brasaoimperiobr {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.4rem;
+  height: 1.4rem;
+  /* Posição correta, conforme a Bandeira do Império do Brasil original:
+     o brasão fica ERETO dentro do losango, com a coroa imperial no topo
+     (fonte: Flags of the World / crwflags.com, br_emp.html). O botão-pai
+     gira +45° para formar o losango; -45° aqui cancela exatamente esse
+     giro (+45 - 45 = 0°), mantendo o brasão sempre na vertical. */
+  transform: rotate(-90deg);
 }
 
-.brasaoimperiobr img .light #switch button {
-  width: 100%;
-  position: absolute;
-  object-position: initial bottom;
-  object-fit: cover fill;
+.brasaoimperiobr img {
+  width: 200%;
+  height: auto;
+  object-fit: contain;
+  image-rendering: -webkit-optimize-contrast;
   image-rendering: optimizeQuality;
+  transform: rotate(90deg);
 }
 
-.light #switch button:hover {
-  width: 1.8rem;
-  height: 1.8rem;
+.theme-label {
+  font-size: 0.65rem;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+  opacity: 0.7;
+  line-height: 1;
+}
+
+/* -------------------------------------------------------------------------
+   8. Imagem de Destaque (hero-figure)
+   ------------------------------------------------------------------------- */
+.hero-figure {
+  margin: var(--space-4) auto;
+  width: 200%;
+  max-width: min(400px, 100vw);
+}
+
+.hero-link {
+  display: block;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  box-shadow: var(--shadow-elevated);
+  cursor: pointer;
+}
+
+.hero-link:hover,
+.hero-link:focus-visible {
+  box-shadow: var(--shadow-elevated), var(--glow-highlight);
+}
+
+.hero-figure img {
+  width: 100%;
+  height: auto;
+}
+
+.hero-caption {
+  margin-top: var(--space-2);
+  font-size: clamp(0.75rem, 0.7rem + 0.25vw, 0.85rem);
+  opacity: 0.85;
+}
+
+/* -------------------------------------------------------------------------
+   9. Títulos de Seção
+   ------------------------------------------------------------------------- */
+main h3 {
+  margin: var(--space-5) 0 var(--space-3);
+  font-size: var(--fs-h3);
+  letter-spacing: 0.05rem;
+  text-shadow: var(--text-shadow-soft);
+}
+
+main section:first-of-type h3 {
+  margin-top: var(--space-4);
+}
+
+/* -------------------------------------------------------------------------
+   10. Listas de Links
+   ------------------------------------------------------------------------- */
+.link-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+  font-family: var(--body-font);
+  text-align: center;
+  font-size: medium;
+  font-weight: 1000;
+}
+
+.link-list a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(0.75rem, 0.65rem + 0.5vw, 1rem);
+  background: var(--surface-color);
+  border: 1px solid var(--stroke-color);
+  border-radius: 0.5rem;
+  backdrop-filter: blur(0.25rem);
+  -webkit-backdrop-filter: blur(0.25rem);
+  text-decoration: none;
+  font-size: clamp(0.85rem, 0.8rem + 0.3vw, 1rem);
+  font-weight: 400;
+  line-height: 1.35;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  hyphens: auto;
+  box-shadow: var(--shadow-soft);
+  transition:
+    background var(--transition-base),
+    border-color var(--transition-base),
+    box-shadow var(--transition-base),
+    transform var(--transition-fast),
+    color var(--transition-base);
+}
+
+.link-list a:hover,
+.link-list a:focus-visible {
+  background: var(--neptuneblue);
+  border: 1.5px solid #acffac;
+  color: #acffac;
+  -webkit-text-fill-color: #acffac;
+  box-shadow: var(--shadow-elevated);
+  transform: translateY(-2px) scale(1.015);
+}
+
+.light .link-list a:hover,
+.light .link-list a:focus-visible {
+  background: var(--surface-color-hover);
+  border: 1.5px solid var(--text-color);
+  color: var(--highlight-color);
+  -webkit-text-fill-color: var(--highlight-color);
+  box-shadow: var(--glow-highlight);
+}
+
+/* -------------------------------------------------------------------------
+   11. Seção de Vídeos
+   ------------------------------------------------------------------------- */
+.video-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+  padding: 1rem;
+}
+
+.video-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.video-frame {
+  width: 100%;
+  max-width: 640px;
+  aspect-ratio: 16 / 9;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  border: 1px solid var(--stroke-color);
+  background: var(--surface-color);
+  box-shadow: var(--shadow-soft);
+  transition:
+    box-shadow var(--transition-base),
+    transform var(--transition-base);
+}
+
+.video-frame:hover {
+  box-shadow: var(--shadow-elevated);
+}
+
+.video-frame iframe {
+  width: 100%;
+  height: 100%;
   border: 0;
-
-  background: silver;
-
-  outline: 4px solid var(--highlight-color);
-  outline-style: solid;
-  outline-offset: 2.5px;
-
-  border-radius: 50%;
-  position: absolute;
-  top: 50%;
-  left: 0;
-  z-index: 1;
 }
 
-/*
-Links
-*/
-#links-1 {
-  display: -webkit-flex;
-  flex-direction: column;
-  gap: 1rem;
-  padding: 1rem;
-  font-family: var(--body-font);
-  text-align: center;
-  font-size: medium;
-  font-weight: 1000;
-}
-
-#links-1 a {
-  display: -webkit-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1rem 1rem;
-  background: var(--surface-color);
-  border: 1px solid var(--stroke-color);
-  border-radius: 0.5rem;
-  backdrop-filter: blur(0.25rem);
-  -webkit-backdrop-filter: blur(0.25rem);
-  text-decoration: none;
+.video-caption {
   font-size: medium;
   font-weight: 400;
-  transition: var(--bg-degrees) 1.4s;
+  text-shadow: var(--text-shadow-soft);
 }
 
-#links-1 a:hover {
-  background: #acffac;
-  border: 1.5px solid #acffac;
-  -webkit-text-fill-color: #acffac;
-  animation: 0.5s forwards;
-  background: var(--neptuneblue);
-}
-
-.light #links-1 a:hover {
-  background: var(--golden);
-  border: 1.5px solid var(--text-color);
-  -webkit-text-fill-color: var(--highlight-color);
-  animation: 0.5s forwards;
-  background: var(--surface-color-hover);
-}
-
-#links-2 {
-  -webkit-animation: reveal 1ms ease-in-out both;
-  animation: reveal 1ms ease-in-out both;
-  animation-timeline: view();
-  animation-range: cover cover 200px;
-  animation-range-end: 500px;
-  display: -webkit-flex;
-  flex-direction: column;
-  gap: 1rem;
-  padding: 1rem;
-  font-family: var(--body-font);
-  text-align: center;
-  font-size: medium;
-  font-weight: 1000;
-}
-
-#links-2 a {
-  display: -webkit-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1rem 1rem;
-  background: var(--surface-color);
-  border: 1px solid var(--stroke-color);
-  border-radius: 0.5rem;
-  backdrop-filter: blur(0.25rem);
-  -webkit-backdrop-filter: blur(0.25rem);
-  text-decoration: none;
-  font-size: medium;
-  font-weight: 400;
-  transition: background 1.4s;
-}
-
-#links-2 a:hover {
-  background: var(--surface-color-hover);
-  border: 1.5px solid #acffac;
-  -webkit-text-fill-color: #acffac;
-  animation: 0.5s forwards;
-  background: var(--neptuneblue);
-}
-
-.light #links-2 a:hover {
-  background: var(--golden);
-  border: 1.5px solid var(--text-color);
-  -webkit-text-fill-color: var(--highlight-color);
-  animation: 0.5s forwards;
-  background: var(--surface-color-hover);
-}
-
-/*
- * Redes Sociais
- */
+/* -------------------------------------------------------------------------
+   12. Redes Sociais
+   ------------------------------------------------------------------------- */
 #social {
-  -webkit-animation: reveal 1ms ease-in-out both;
-  animation: reveal 1ms ease-in-out both;
-  animation-timeline: view();
-  animation-range-start: 10% cover 25%;
-  display: -webkit-flex;
+  display: flex;
   justify-content: center;
+  gap: 0.5rem;
   padding: 1rem 0;
   font-size: 1rem;
 }
 
 #social a {
-  display: -webkit-flex;
+  display: flex;
   align-items: center;
   justify-content: center;
   padding: 1rem;
-
-  transition: var(--bg-degrees) 0.5s;
   border-radius: 60%;
+  transition:
+    background var(--transition-fast),
+    box-shadow var(--transition-fast),
+    transform var(--transition-fast);
 }
 
-#social a:hover {
+#social a ion-icon {
+  font-size: 1.5rem;
+  transition: transform var(--transition-fast);
+}
+
+#social a:hover,
+#social a:focus-visible {
   background: #acffac;
+  box-shadow: var(--shadow-soft);
+  transform: translateY(-2px);
 }
 
-.light #social a:hover {
+#social a:hover ion-icon,
+#social a:focus-visible ion-icon {
+  transform: scale(1.15);
+}
+
+.light #social a:hover,
+.light #social a:focus-visible {
   background: var(--highlight-color);
+  box-shadow: var(--glow-highlight);
 }
 
-/*
- * Animação
- */
+.rodape {
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  opacity: 0.85;
+}
 
+/* -------------------------------------------------------------------------
+   13. Indicador de Progresso de Rolagem
+   ------------------------------------------------------------------------- */
 .c-indicator {
   -webkit-animation: scroll 1ms ease-in-out;
   animation: scroll 1ms ease-in-out;
   animation-timeline: scroll(root);
-  background-color: var(--neptuneblue);
+  background: linear-gradient(
+    90deg,
+    var(--neptuneblue),
+    var(--highlight-color)
+  );
   transform-origin: left;
-  height: var(--scroll-height);
-  inset: 0;
+  height: 4px;
+  inset: 0 0 auto 0;
   position: fixed;
+  z-index: 10;
 }
 
-@keyframes slide-in {
-  from {
-    left: 0;
-  }
-  to {
-    left: 100%;
-    transform: translate(-90%, -50%);
-  }
+/* -------------------------------------------------------------------------
+   14. Efeitos de Interação — Zoom / Luz & Sombra
+   ------------------------------------------------------------------------- */
+
+/* 14.1 Zoom em imagens ao passar o mouse / focar / selecionar */
+.zoom-img {
+  transition:
+    transform var(--transition-base),
+    box-shadow var(--transition-base),
+    filter var(--transition-base);
+  will-change: transform;
 }
 
-@keyframes slide-back {
-  from {
-    left: 50%;
-  }
-  to {
-    left: 0;
-  }
+.zoom-img:hover,
+.zoom-img:focus-within,
+.zoom-img:active {
+  transform: scale(var(--zoom-scale));
+  filter: brightness(1.05) saturate(1.08);
 }
 
+/* 14.2 Zoom/realce em links e texto */
+.zoom-link {
+  transition:
+    transform var(--transition-base),
+    letter-spacing var(--transition-base);
+  display: inline-block;
+}
+
+.zoom-link:hover,
+.zoom-link:focus-visible,
+.zoom-link:active {
+  transform: scale(1.03);
+  letter-spacing: 0.02rem;
+}
+
+/* Seleção de texto com cor de destaque consistente com o tema */
+::selection {
+  background: var(--highlight-color);
+  color: #03055b;
+}
+
+/* -------------------------------------------------------------------------
+   15. Animações de Revelação ao Rolar (data-reveal)
+   -------------------------------------------------------------------------
+   Progressive enhancement: elementos com [data-reveal] começam ocultos
+   apenas quando JS está disponível (classe .js-reveal-ready adicionada
+   pelo scripts.js) e ganham a classe .is-visible via IntersectionObserver.
+   Sem JS, o conteúdo permanece sempre visível.
+   ------------------------------------------------------------------------- */
+.js-reveal-ready [data-reveal] {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity var(--transition-slow),
+    transform var(--transition-slow);
+}
+
+.js-reveal-ready [data-reveal].is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* -------------------------------------------------------------------------
+   16. Keyframes
+   ------------------------------------------------------------------------- */
 @keyframes scroll {
   from {
     scale: 0 1;
   }
-
   to {
     scale: 1 1;
   }
@@ -420,9 +685,176 @@ Links
     opacity: 0;
     clip-path: inset(45% 20% 45% 20%);
   }
-
   to {
     opacity: 1;
     clip-path: inset(0% 0% 0% 0%);
+  }
+}
+
+/* -------------------------------------------------------------------------
+   17. Responsividade (mobile-first breakpoints)
+   ------------------------------------------------------------------------- */
+
+/* Telas pequenas (celulares).
+   OBS: a maior parte do dimensionamento (fontes, avatar, espaçamentos) já é
+   fluida via clamp()/vw nas variáveis e regras acima, então aqui só ajustamos
+   o que precisa de um comportamento realmente diferente em telas estreitas
+   (evita sobrescrever os valores fluidos com números fixos e "travar" a
+   transição suave entre tamanhos). */
+@media (max-width: 420px) {
+  .link-list {
+    gap: 0.75rem;
+    padding: 0.75rem 0.5rem;
+  }
+
+  .video-list {
+    gap: 1.25rem;
+    padding: 0.75rem 0.5rem;
+  }
+
+  #social a {
+    padding: 0.75rem;
+  }
+}
+
+/* Telas extremamente pequenas (celulares antigos/compactos, ~320px e menos,
+   incluindo a coluna estreita de dobráveis fechados). */
+@media (max-width: 340px) {
+  .container {
+    padding-inline: 0.5rem;
+  }
+
+  .switch-row {
+    gap: 0.35rem;
+  }
+
+  /* Losango e trilho reduzidos, mantendo a proporção 10:7 da bandeira
+     e o quadrado/diagonal proporcionais entre si. */
+  :root {
+    --flag-track-w: 2.9rem;
+    --flag-track-h: 2.03rem;
+    --flag-thumb-side: 1.2rem;
+    --flag-thumb-diagonal: 1.697rem;
+    --flag-thumb-inset: 0.22rem;
+  }
+
+  .brasaoimperiobr {
+    width: 0.78rem;
+    height: 0.78rem;
+  }
+
+  .theme-label {
+    letter-spacing: 0.1rem;
+  }
+
+  .hero-figure {
+    max-width: min(220px, 70vw);
+  }
+
+  .link-list a {
+    padding: 0.65rem;
+  }
+}
+
+/* Telas muito baixas em modo paisagem (celulares deitados): reduz margens
+   verticais para caber mais conteúdo sem exigir rolagem excessiva. */
+@media (max-height: 420px) and (orientation: landscape) {
+  .container {
+    padding-top: 0.75rem;
+  }
+
+  .avatar {
+    width: 3.5rem;
+    height: 3.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .titles-list,
+  .flags {
+    display: none;
+  }
+
+  main h3 {
+    margin-top: 1.25rem;
+  }
+}
+
+/* Tablets */
+@media (min-width: 421px) and (max-width: 768px) {
+  .container {
+    padding: 1.25rem 1rem 2.5rem;
+  }
+
+  .link-list {
+    padding: 1rem 1.5rem;
+  }
+}
+
+/* Telas grandes / desktop */
+@media (min-width: 1024px) {
+  .container {
+    font-size: 1rem;
+  }
+
+  .link-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem 1.5rem;
+  }
+
+  .video-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.75rem;
+    align-items: start;
+  }
+}
+
+/* Telas muito grandes */
+@media (min-width: 1440px) {
+  .container {
+    max-width: 78rem;
+  }
+
+  .link-list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* Dispositivos com hover indisponível (touch): remove elevação no hover
+   e mantém apenas o estado :active para não "prender" o efeito ao toque. */
+@media (hover: none) {
+  .link-list a:hover,
+  .zoom-img:hover,
+  .zoom-link:hover,
+  #social a:hover {
+    transform: none;
+    box-shadow: var(--shadow-soft);
+  }
+}
+
+/* -------------------------------------------------------------------------
+   18. Movimento Reduzido (acessibilidade)
+   ------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .js-reveal-ready [data-reveal] {
+    opacity: 1;
+    transform: none;
+  }
+
+  .zoom-img:hover,
+  .zoom-img:focus-within,
+  .link-list a:hover,
+  .zoom-link:hover {
+    transform: none;
   }
 }

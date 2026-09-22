@@ -1,260 +1,375 @@
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
+    <!--
+      =====================================================================
+      ÍNDICE DO DOCUMENTO (index.html)
+      =====================================================================
+      1. Meta tags & SEO / Open Graph
+      2. Fontes & folha de estilos
+      3. <body>
+         3.1 Header
+             3.1.1 Perfil (avatar + títulos)
+             3.1.2 Botão de alternância de tema (claro/escuro)
+         3.2 Imagem de destaque (brasão / retrato)
+         3.3 <main>
+             3.3.1 Seção I   – Dinastia e Nobiliarquia
+             3.3.2 Seção II  – Atuação Profissional
+             3.3.3 Seção III – Mídia e Vídeos
+         3.4 Footer
+             3.4.1 Redes sociais
+             3.4.2 Créditos
+      4. Scripts (ionicons + scripts.js)
+      =====================================================================
+    -->
     <meta name="robots" content="noindex,nofollow" />
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#03055b" />
+    <meta name="color-scheme" content="dark light" />
 
+    <!-- Open Graph / compartilhamento em redes sociais -->
     <meta property="og:title" content="Dom Guilherme daCunha" />
     <meta property="og:description" content="Árvore de links" />
-    <meta
-      property="og:image"
-      content="./assets/baraomarquesmoderno.png" alt="baraomarquesdacunha" />
+    <meta property="og:image" content="./assets/baraomarquesmoderno.png" />
     <meta property="og:url" content="https://dacunhadb.github.io/dacunhadb/" />
 
     <title>Comendador Dom. Guilherme V. daCunha</title>
 
+    <!-- Ícone do site (favicon) — deve viver no <head>, não no <body> -->
+    <link rel="icon" type="image/png" href="./assets/avatar.png" />
+    <link rel="shortcut icon" type="image/png" href="./assets/avatar.png" />
+
+    <!-- Fontes -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
+
+    <!-- Folha de estilos -->
     <link rel="stylesheet" href="./style.css" />
   </head>
 
   <body>
+    <!-- Indicador fino de progresso de rolagem (preenchido via CSS/scroll-timeline) -->
+    <div class="c-indicator" aria-hidden="true"></div>
+
     <div class="container">
-      <header>
+      <!-- =================== 3.1 HEADER =================== -->
+      <header class="site-header" data-reveal>
+        <!-- 3.1.1 Perfil -->
         <div id="profile">
-          <div class="avatar">
-            <img src="./assets/avatar.png" alt="avatar" />
-          </div>
-          <h1><sub>Comendador Dom. Guilherme V. daCunha</sub> </h1>
-          <h6>Voievoda de Novgorod (Marquês)</h6>
-          <h6>Visconde San Prudêncio Lorenzo Giustiniani</h6>
-          <h6>Barão de São Bento de Núrsia e da Rifaina</h6>
-          <h6>Barão da Ala Ocidental do Castelo de Coteros</h6>
-          <h6>Alto Conselho Representante Monarquista</h6>
-          <h6>Sextæ Legionis Cæsarea</h6>
-          <h4><sub>🇪🇺🇵🇹🇺🇸🇨🇦🇬🇧🏴󠁧󠁢󠁥󠁮󠁧󠁿🇦🇺🇳🇿🇮🇹🇯🇵🇧🇷🇦🇷🇵🇾🇨🇻🇬🇼🇬🇶🇸🇹🇦🇴🇹🇱🇲🇿</sub></h4>
-          <link
-            rel="shortcut icon"
-            type="image/ico"
-            href="./assets/avatar.png"
-          />
-        </div>
-  
-        <div id="switch">
-          <button onclick="toggleMode()">
-            <div class="brasaoimperiobr">
+          <div class="avatar zoom-img">
+            <picture>
+              <source srcset="./assets/avatar.webp" type="image/webp" />
               <img
-                id="brasaoimperiobr"
-                src="./assets/brasaoimperiobr.png"
-                height="29"
-                alt="brasaoimperiobr"
-                rel="shortcut icon"
-                type="image/ico"
-                href="./assets/brasaoimperiobr.png"
+                src="./assets/avatar.png"
+                alt="Retrato de Dom Guilherme V. daCunha"
+                width="112"
+                height="112"
+                loading="eager"
+                decoding="async"
               />
-            </div>
-          </button>
+            </picture>
+          </div>
+
+          <h1><sub>Comendador Dom. Guilherme V. daCunha</sub></h1>
+
+          <ul class="titles-list" aria-label="Títulos nobiliárquicos">
+            <li><h6>Voievoda de Novgorod (Marquês)</h6></li>
+            <li><h6>Visconde San Prudêncio Lorenzo Giustiniani</h6></li>
+            <li><h6>Barão de São Bento de Núrsia e da Rifaina</h6></li>
+            <li><h6>Barão da Ala Ocidental do Castelo de Coteros</h6></li>
+            <li><h6>Alto Conselho Representante Monarquista</h6></li>
+            <li><h6>Sextæ Legionis Cæsarea</h6></li>
+          </ul>
+
+          <h4 class="flags" aria-label="Nacionalidades e vínculos">
+            <sub>🇪🇺🇵🇹🇺🇸🇨🇦🇬🇧🏴󠁧󠁢󠁥󠁮󠁧󠁿🇦🇺🇳🇿🇮🇹🇯🇵🇧🇷🇦🇷🇵🇾🇨🇻🇬🇼🇬🇶🇸🇹🇦🇴🇹🇱🇲🇿</sub>
+          </h4>
         </div>
 
-        <div>
-          <sub>
-            <sub>
-              <sub>
-                <sub> Tema </sub>
-              </sub>
-            </sub>
-          </sub>
+        <!-- 3.1.2 Alternância de tema -->
+        <div class="switch-row">
+          <div id="switch" class="theme-switch">
+            <button
+              type="button"
+              id="theme-toggle"
+              onclick="toggleMode()"
+              role="switch"
+              aria-checked="false"
+              aria-label="Alternar entre tema claro e escuro"
+            >
+              <span class="brasaoimperiobr" aria-hidden="true">
+                <picture>
+                  <source srcset="./assets/brasaoimperiobr.webp" type="image/webp" />
+                  <img
+                    id="brasaoimperiobr"
+                    src="./assets/brasaoimperiobr.png"
+                    height="20"
+                    width="20"
+                    alt=""
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </picture>
+              </span>
+            </button>
+          </div>
+          <span class="theme-label" aria-hidden="true">Tema</span>
         </div>
       </header>
 
-              <img
-                id="baraomarquesclassico"
-                src="./assets/baraomarquesclassico.png"
-                height="300"
-                alt="baraomarquesclassico"
-                rel="shortcut icon"
-                type="image/ico"
-                href="./assets/baraomarquesclassico.png"
-              />
+      <!-- =================== 3.2 IMAGEM DE DESTAQUE (brasão com pavões) ===================
+           Também funciona como link direto para o Instagram. -->
+      <figure class="hero-figure" data-reveal>
+        <a
+          class="hero-link zoom-img"
+          href="https://instagram.com/comendador_domgvdc"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Abrir o perfil no Instagram @comendador_domgvdc"
+        >
+          <picture>
+            <source srcset="./assets/baraomarquesclassico.webp" type="image/webp" />
+            <img
+              id="baraomarquesclassico"
+              src="./assets/baraomarquesclassico.png"
+              alt="Brasão com pavões de Dom Guilherme daCunha — toque para abrir o Instagram @comendador_domgvdc"
+              width="300"
+              height="300"
+              loading="lazy"
+              decoding="async"
+            />
+          </picture>
+        </a>
+        <figcaption class="hero-caption">
+          <a
+            href="https://instagram.com/comendador_domgvdc"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="zoom-link"
+            >📷 @comendador_domgvdc</a
+          >
+        </figcaption>
+      </figure>
 
-      <main><h3>I - Dinastia e Nobiliarquia</h3>
-        <ul id="links-1">
+      <!-- =================== 3.3 MAIN =================== -->
+      <main>
+        <!-- 3.3.1 Seção I — Dinastia e Nobiliarquia -->
+        <section aria-labelledby="secao-1" data-reveal>
+          <h3 id="secao-1">I &mdash; Dinastia e Nobiliarquia</h3>
 
-          <li>
-            <a href="https://www.heraldrysinstitute.com/lang/it/cognomi/di+Paola/idc/883346/">Royal Casa di Paola - Heraldys Institute of Rome </a>
-          </li>
+          <ul class="link-list">
+            <li>
+              <a href="https://www.heraldrysinstitute.com/lang/it/cognomi/di+Paola/idc/883346/" class="zoom-link"
+                >Royal Casa di Paola - Heraldys Institute of Rome</a
+              >
+            </li>
+            <li>
+              <a href="https://orderofmaltawestern.us/grand-master-antoine-de-paule/" class="zoom-link"
+                >Sovereign Military Hospitaller Order of St. John of Jerusalem of Rhodes and of Malta</a
+              >
+            </li>
+            <li>
+              <a href="https://www.instagram.com/sovranoordine_sg" class="zoom-link"
+                >Sovrano Militare Ordine Ospedaliero di San Giovanni di Gerusalemme e Due Sicilie - Fondazione San Giovanni di Gerusalemme</a
+              >
+            </li>
+            <li>
+              <a href="https://www.instagram.com/iaristocraticsociety" class="zoom-link"
+                >International Aristocratic Society</a
+              >
+            </li>
+            <li>
+              <a href="https://valukassmolensk.github.io/novgorod" class="zoom-link"
+                >Casa Principesca de Novgorod</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://casarealmozer.wixsite.com/casarealmozer?fbclid=PAdGRleAOOnddleHRuA2FlbQIxMQABp2bRCc48UAGq3uMRaTRYJkmYRCJk6bZRMcoaleuZ_9v3O7XXD8kZU8zg4W8v_aem_2J6k6dMnFkdE4eTzlL9WPg"
+                class="zoom-link"
+                >Casa Real de Mozer von Württemberg</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://sites.google.com/view/casa-de-poitiers/in%C3%ADcio?authuser=0&utm_source=ig&utm_medium=social&utm_content=link_in_bio"
+                class="zoom-link"
+                >Casa Real de Poitiers</a
+              >
+            </li>
+            <li>
+              <a href="https://casarealbenevento.com.br" class="zoom-link"
+                >Casa Principesca de Benevento e Ducal de Spoleto y Resende</a
+              >
+            </li>
+            <li>
+              <a href="https://www.instagram.com/ordem_dos_milagres" class="zoom-link">Ordem dos Milagres</a>
+            </li>
+            <li>
+              <a href="https://nanakofiadom.wordpress.com" class="zoom-link"
+                >Instituto Cultural Nana Kofi Adom I (IQUINCA)</a
+              >
+            </li>
+            <li>
+              <a href="https://beacons.ai/baraodarifaina" class="zoom-link">Barão da Rifaina</a>
+            </li>
+            <li>
+              <a href="https://beacons.ai/cmuoficial" class="zoom-link">Círculo Monárquico de Uberlândia</a>
+            </li>
+            <li>
+              <a href="https://www.instagram.com/cmonarq_des" class="zoom-link"
+                >Círculo Monárquico de Desemboque e Sacramento</a
+              >
+            </li>
+          </ul>
+        </section>
 
-          <li>
-            <a href="https://orderofmaltawestern.us/grand-master-antoine-de-paule/">Sovereign Military Hospitaller Order of St. John of Jerusalem of Rhodes and of Malta</a>
-          </li>
+        <!-- 3.3.2 Seção II — Atuação Profissional -->
+        <section aria-labelledby="secao-2" data-reveal>
+          <h3 id="secao-2">II &mdash; Atuação Profissional</h3>
 
-          <li>
-            <a href="https://www.instagram.com/sovranoordine_sg">Sovrano Militare Ordine Ospedaliero di San Giovanni di Gerusalemme e Due Sicilie - Fondazione San Giovanni di Gerusalemme</a>
-          </li>   
+          <ul class="link-list">
+            <li>
+              <a
+                href="https://diariodeuberlandia.com.br/noticia/22185/uberlandense-guilherme-da-cunha-celebra-10-anos-de-carreira-com-novo-album?fbclid=IwAR08MGOqhxlWXuC4K-esAAUI3dGp8TYukJmme2f2gtjxPOQZwGg3G2gi1cg"
+                class="zoom-link"
+                >Diário de Uberlândia</a
+              >
+            </li>
+            <li>
+              <a href="https://globoplay.globo.com/v/3856369/" class="zoom-link">Rede Globo - Tv Integração - MGTV</a>
+            </li>
+            <li>
+              <a
+                href="https://drive.google.com/file/d/1YS34b8BYG1Gn8ygMOczu8x6uhgXvs7tk/view?pli=1"
+                class="zoom-link"
+                >Audio Storyboard</a
+              >
+            </li>
+          </ul>
+        </section>
 
-          <li>
-            <a href="https://www.instagram.com/iaristocraticsociety">International Aristocratic Society</a>
-          </li>
+        <!-- 3.3.3 Seção III — Mídia e Vídeos -->
+        <section aria-labelledby="secao-3" data-reveal>
+          <h3 id="secao-3">III &mdash; Mídia e Vídeos</h3>
 
-          <li>
-            <a href="https://valukassmolensk.github.io/novgorod">Casa Principesca de Novgorod</a>
-          </li>
+          <ul class="video-list">
+            <li class="video-item zoom-img">
+              <div class="video-frame">
+                <iframe
+                  src="https://www.youtube.com/embed/jMUIbFiByIk?si=ZyTqmmpXWGbIeNqF"
+                  title="Amirassy TV - Valucast"
+                  loading="lazy"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen
+                ></iframe>
+              </div>
+              <p class="video-caption">Amirassy TV - Valucast</p>
+            </li>
 
-          <li>
-            <a  href="https://casarealmozer.wixsite.com/casarealmozer?fbclid=PAdGRleAOOnddleHRuA2FlbQIxMQABp2bRCc48UAGq3uMRaTRYJkmYRCJk6bZRMcoaleuZ_9v3O7XXD8kZU8zg4W8v_aem_2J6k6dMnFkdE4eTzlL9WPg">Casa Real de Mozer von Württemberg</a>
-          </li>
+            <li class="video-item zoom-img">
+              <div class="video-frame">
+                <iframe
+                  src="https://www.youtube.com/embed/KUqB6jCbbdM?si=FsNLvg5tL_R75kDx"
+                  title="Instituto Nana Kofi Adom I - Cultura Popular e Alta Cultura"
+                  loading="lazy"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen
+                ></iframe>
+              </div>
+              <p class="video-caption">Instituto Nana Kofi Adom I - Cultura Popular e Alta Cultura</p>
+            </li>
 
-          <li>
-            <a href="https://sites.google.com/view/casa-de-poitiers/in%C3%ADcio?authuser=0&utm_source=ig&utm_medium=social&utm_content=link_in_bio" >Casa Real de Poitiers</a >
-          </li>
+            <li class="video-item zoom-img">
+              <div class="video-frame">
+                <iframe
+                  src="https://www.youtube.com/embed/Y62cHZUt1hA?si=d-2PHEPlkq9w6C4j"
+                  title="Café Cajubá"
+                  loading="lazy"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen
+                ></iframe>
+              </div>
+              <p class="video-caption">Café Cajubá</p>
+            </li>
 
+            <li class="video-item zoom-img">
+              <div class="video-frame">
+                <iframe
+                  src="https://www.youtube.com/embed/cLCeEY5vgoA?si=bcKhQNxg4qerFBRI&amp;start=5"
+                  title="Arroz Vasconcelos"
+                  loading="lazy"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen
+                ></iframe>
+              </div>
+              <p class="video-caption">Arroz Vasconcelos</p>
+            </li>
 
-          <li>
-            <a href="https://casarealbenevento.com.br">Casa Principesca de Benevento e Ducal de Spoleto y Resende</a>
-          </li>
-
-          <li>
-            <a href="https://www.instagram.com/ordem_dos_milagres">Ordem dos Milagres</a>
-          </li>
-
-          <li>
-            <a href="https://nanakofiadom.wordpress.com">Instituto Cultural Nana Kofi Adom I (IQUINCA)</a>
-          </li>
-
-          <li>
-            <a href="https://beacons.ai/baraodarifaina">Barão da Rifaina</a>
-          </li>
-
-          <li>
-            <a href="https://beacons.ai/cmuoficial">Círculo Monárquico de Uberlândia</a>
-          </li>
-
-          <li>
-            <a href="https://www.instagram.com/cmonarq_des">Círculo Monárquico de Desemboque e Sacramento</a>
-          </li>
-
-<br>
-
-  <h5>II - Atuação Profissional</h5>
-
-          <li>
-            <a  href="https://diariodeuberlandia.com.br/noticia/22185/uberlandense-guilherme-da-cunha-celebra-10-anos-de-carreira-com-novo-album?fbclid=IwAR08MGOqhxlWXuC4K-esAAUI3dGp8TYukJmme2f2gtjxPOQZwGg3G2gi1cg">Diário de Uberlândia</a>
-          </li>
-
-          <li>
-            <a href="https://globoplay.globo.com/v/3856369/">Rede Globo - Tv Integração - MGTV</a>
-          </li>
-
-          <li>
-            <a  href="https://drive.google.com/file/d/1YS34b8BYG1Gn8ygMOczu8x6uhgXvs7tk/view?pli=1" >Audio Storyboard</a>
-          </li>
-
-
-<br>
-      <h5>I - Dinastia e Nobiliarquia</h5>
-
-        <ul id="links-2">
-          <iframe 
-          width="auto" 
-          height="320" 
-          src="https://www.youtube.com/embed/jMUIbFiByIk?si=ZyTqmmpXWGbIeNqF" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            >Amirassy TV - Valucast</iframe
-          >Amirassy TV - Valucast
-        </ul>
-
-                <ul id="links-2">
-
-          <iframe 
-          width="auto" 
-          height="320" 
-          src="https://www.youtube.com/embed/KUqB6jCbbdM?si=FsNLvg5tL_R75kDx" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            >Instituto Nana Kofi Adom I - Cultura Popular e Alta Cultura</iframe
-          >Instituto Nana Kofi Adom I - Cultura Popular e Alta Cultura
-
-<br> <br> <br>
-        <h5>II - Atuação Profissional</h5>
-
-        <ul id="links-2">
-          <iframe
-            width="auto"
-            height="320"
-            src="https://www.youtube.com/embed/Y62cHZUt1hA?si=d-2PHEPlkq9w6C4j"
-            title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin"
-            allowfullscreen
-            >Café Cajubá</iframe
-          >Café Cajubá
-        </ul>
-
-        <ul id="links-2">
-          <iframe
-            width="auto"
-            height="320"
-            src="https://www.youtube.com/embed/cLCeEY5vgoA?si=bcKhQNxg4qerFBRI&amp;start=5"
-            title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin"
-            allowfullscreen
-            >Arroz Vasconcelos</iframe
-          >Arroz Vasconcelos
-        </ul>
-
-        <ul id="links-2">
-          <iframe
-            width="auto"
-            height="320"
-            src="https://www.youtube.com/embed/a4VDEWnXTAE?si=5zMnO-p11WT5SW4n"
-            title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin"
-            allowfullscreen
-            >os Seminovos</iframe
-          >Os Seminovos
-        </ul>
-
+            <li class="video-item zoom-img">
+              <div class="video-frame">
+                <iframe
+                  src="https://www.youtube.com/embed/a4VDEWnXTAE?si=5zMnO-p11WT5SW4n"
+                  title="Os Seminovos"
+                  loading="lazy"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen
+                ></iframe>
+              </div>
+              <p class="video-caption">Os Seminovos</p>
+            </li>
+          </ul>
+        </section>
       </main>
 
-      <footer>
+      <!-- =================== 3.4 FOOTER =================== -->
+      <footer data-reveal>
         <ul id="social">
           <li>
-            <a href="https://github.com/daCunhadb">
-              <ion-icon name="logo-github">GitHub</ion-icon>
+            <a href="https://github.com/daCunhadb" class="zoom-link" aria-label="GitHub">
+              <ion-icon name="logo-github" aria-hidden="true"></ion-icon>
             </a>
           </li>
 
           <li>
-            <a href="https://br.linkedin.com/in/dacunhalem/"
-              ><ion-icon name="logo-linkedin">Linkedin</ion-icon></a
-            >
+            <a href="https://br.linkedin.com/in/dacunhalem/" class="zoom-link" aria-label="LinkedIn">
+              <ion-icon name="logo-linkedin" aria-hidden="true"></ion-icon>
+            </a>
           </li>
         </ul>
 
-        <p class="Rodapé">
-          <a href="https://www.instagram.com/dacunhadb">Made by daCunhadB</a>
+        <p class="rodape">
+          <a href="https://www.instagram.com/dacunhadb" class="zoom-link">Made by daCunhadB</a>
         </p>
       </footer>
     </div>
 
+    <!-- =================== 4. SCRIPTS =================== -->
     <script
       type="module"
       src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
     ></script>
-
     <script
       nomodule
       src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
     ></script>
 
-    <script src="./scripts.js"></script>
+    <script src="./scripts.js" defer></script>
   </body>
 </html>
